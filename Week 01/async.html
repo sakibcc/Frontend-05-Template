@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: gray;
+        display: inline-block;
+        margin: 20px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .green.light {
+        background-color: green;
+      }
+      .red.light {
+        background-color: red;
+      }
+      .yellow.light {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="green"></div>
+    <div class="yellow"></div>
+    <div class="red"></div>
+  </body>
+  <script>
+    function handleLight(type) {
+      var divs = document.getElementsByTagName("div");
+      for (var i = 0; i < 3; i++) {
+        divs[i].classList.remove("light");
+      }
+      document.getElementsByClassName(type)[0].classList.add("light");
+    }
+
+    function sleep(time) {
+      return new Promise((resolve, reject) => {
+        setTimeout(resolve, time);
+      });
+    }
+
+    async function start() {
+      while (true) {
+        handleLight("green");
+        await sleep(10000);
+        handleLight("yellow");
+        await sleep(2000);
+        handleLight("red");
+        await sleep(5000);
+      }
+    }
+    start();
+  </script>
+</html>
