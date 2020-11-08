@@ -7,7 +7,9 @@ Proxy 可以理解成，在目标对象之前架设一层“拦截”，外界�
 
 ## vue源码简单理解
 vue2是使用Object.defineProperty中的set和get方法，来对对象进行劫持。然后通过Observer设计模式来监听、订阅、发布实现双向绑定；其中Object.defineProperty负责触发派发更新，会先出发数据更新，然后最后触发渲染watcher，来实现数据与视图双向绑定；
+
 但是Object.defineProperty有一个很明显的缺点，他无法监听数组，所以在vue2源码中会存在重写数组的原生方法，来进行监听和派发更新；
+
 而vue3使用的是proxy进行响应式处理，Proxy具有丰富的api，可以直接监听数组的变化和直接监听对象而非属性；proxy目前兼容ie11以上；
 // TODO: 对比vue3和vue2在双向绑定的方式，尝试去分析采用proxy的好处。
 
@@ -73,66 +75,66 @@ proxy.getDate();
 
 ## 属性
 
-Range.collapsed 只读
+- Range.collapsed 只读
 返回一个表示 Range 的起始位置和终止位置是否相同的布尔值。
-Range.commonAncestorContainer 只读
+- Range.commonAncestorContainer 只读
 返回完整包含 startContainer 和 endContainer 的、最深一级的节点。
-Range.endContainer 只读
+- Range.endContainer 只读
 返回包含 Range 终点的节点。
-Range.endOffset 只读
+- Range.endOffset 只读
 返回一个表示 Range 终点在 endContainer 中的位置的数字。
-Range.startContainer 只读
+- Range.startContainer 只读
 返回包含 Range 开始的节点。
-Range.startOffset 只读
+- Range.startOffset 只读
 返回一个表示 Range 起点在 startContainer 中的位置的数字。
 
 ## 方法
 
 ### 定位方法
 
-Range.setStart()
+- Range.setStart()
 设置 Range 的起点。
-Range.setEnd()
+- Range.setEnd()
 设置 Range 的终点。
-Range.setStartBefore()
+- Range.setStartBefore()
 以其它节点为基准，设置 Range 的起点。
-Range.setStartAfter()
+- Range.setStartAfter()
 以其它节点为基准，设置 Range 的起点。
-Range.setEndBefore()
+- Range.setEndBefore()
 以其它节点为基准，设置 Range 的终点。
-Range.setEndAfter()
+- Range.setEndAfter()
 以其它节点为基准，设置 Range 的终点。
-Range.selectNode()
+- Range.selectNode()
 使 Range 包含某个节点及其内容。
-Range.selectNodeContents()
+- Range.selectNodeContents()
 使 Range 包含某个节点的内容。
-Range.collapse()
+- Range.collapse()
 将 Range 折叠至其端点（boundary points，起止点，指起点或终点，下同）之一。
 
 ### 编辑方法
 
 通过以下方法，可以从 Range 中获得节点，改变 Range 的内容。
 
-Range.cloneContents()
+- Range.cloneContents()
 返回一个包含 Range 中所有节点的文档片段。
-Range.deleteContents()
+- Range.deleteContents()
 从文档中移除 Range 包含的内容。
-Range.extractContents()
+- Range.extractContents()
 把 Range 的内容从文档树移动到一个文档片段中。
-Range.insertNode()
+- Range.insertNode()
 在 Range 的起点处插入一个节点。
-Range.surroundContents()
+- Range.surroundContents()
 将 Range 的内容移动到一个新的节点中。
 
 ### 其他方法
 
-Range.compareBoundaryPoints()
+- Range.compareBoundaryPoints()
 比较两个 Range 的端点。
-Range.cloneRange()
+- Range.cloneRange()
 返回拥有和原 Range 相同的端点的克隆 Range 对象。
-Range.detach()
+- Range.detach()
 将 Range 从使用状态中释放，改善性能。
-Range.toString()
+- Range.toString()
 把 Range 的内容作为字符串返回。
 
 # cssom
