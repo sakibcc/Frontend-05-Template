@@ -1,6 +1,5 @@
-http://es5.github.io/
+## 一、JS 语言知识通识
 
-## 一、JS语言知识通识
 乔姆斯基谱系：是计算机科学中刻画形式文法表达能力的一个分类谱系，是由诺姆·乔姆斯基于 1956 年提出的。它包括四个层次：
 0- 型文法（无限制文法或短语结构文法）包括所有的文法。
 1- 型文法（上下文相关文法）生成上下文相关语言。
@@ -18,8 +17,7 @@ http://es5.github.io/
 基础结构称终结符
 符合结构称非终结符
 引号和中间的字符表示终结符
-可以有括号
-*表示重复多次
+可以有括号 \*表示重复多次
 | 表示或
 
 终结符： 最终在代码中出现的字符（ https://zh.wikipedia.org/wiki/ 終結符與非終結符）
@@ -36,9 +34,10 @@ http://es5.github.io/
 
 协变与逆变： https://jkchao.github.io/typescript-book-chinese/tips/covarianceAndContravariance.html
 
-## 二、JS类型
+## 二、JS 类型
 
 JavaScript 语言的每一个值都属于某一种数据类型。JavaScript 语言规定了 7 种语言类型。语言类型广泛用于变量、函数参数、表达式、函数返回值等场合。根据最新的语言标准，这 7 种语言类型是：
+
 - Undefined
 - Null
 - Boolean
@@ -48,6 +47,7 @@ JavaScript 语言的每一个值都属于某一种数据类型。JavaScript 语�
 - Object
 
 ### Undefined、Null
+
 Undefined 类型表示未定义，它的类型只有一个值，就是 undefined。任何变量在赋值前是 Undefined 类型、值为 undefined，一般我们可以用全局变量 undefined（就是名为 undefined 的这个变量）来表达这个值，或者 void 运算来把任意一个表达式变成 undefined 值。
 
 Undefined 跟 Null 有一定的表意差别，Null 表示的是：“定义了但是为空”。所以，在实际编程时，我们一般不会把变量赋值为 undefined，这样可以保证所有值为 undefined 的变量，都是从未赋值的自然状态。Null 类型也只有一个值，就是 null，它的语义表示空值，与 undefined 不同，null 是 JavaScript 关键字
@@ -68,6 +68,7 @@ Number 类型表示我们通常意义上的“数字”。这个数字大致对�
 根据双精度浮点数的定义，Number 类型中有效的整数范围是 -0x1fffffffffffff 至 0x1fffffffffffff，所以 Number 无法精确表示此范围外的整数。
 
 ### Symbol
+
 Symbol 是 ES6 中引入的新类型，它是一切非字符串的对象 key 的集合，在 ES6 规范中，整个对象系统被用 Symbol 重塑。
 
 ### Object
@@ -76,3 +77,5 @@ Object 是 JavaScript 中最复杂的类型，也是 JavaScript 的核心机制�
 
 因为 C++ 和 Java 的成功，在这两门语言中，每个类都是一个类型，二者几乎等同，以至于很多人常常会把 JavaScript 的“类”与类型混淆。
 事实上，JavaScript 中的“类”仅仅是运行时对象的一个私有属性，而 JavaScript 中是无法自定义类型的。
+
+http://es5.github.io/，在上面这个站点可以查到整个ES5的规范
