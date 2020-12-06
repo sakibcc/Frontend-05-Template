@@ -1,15 +1,17 @@
 const http = require('http')
 
-http.createServer((req,res) => {
+http.createServer((request,response) => {
   let body = [];
-  req.on('error', err => {
+  request.on('error', err => {
     console.error(err)
   }).on('data', chuck => {
     body.push(chuck.toString());
   }).on('end', () => {
-    body = Buffer.concat(body).toString()
+    body = (Buffer.concat([ Buffer.from(body.toString()) ])).toString();
     console.log("body:",body)
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end(' Hello World\n')
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end(' Hello World\n')
   })
 }).listen(8088)
+
+console.log('listen 8088')
