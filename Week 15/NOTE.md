@@ -1,1 +1,9 @@
-暂时只是跟着视频敲了一遍代码，还没时间进行总结
+手势的基本知识
+
+点击：START --END--> TAP
+
+滑动: 
+- 1. start ---移动10px--> pan start ---move---> pan --end---> pan end
+- 2. start --.05s --> press start --移动10px--> pan start ---move---> pan --end---> pan end
+
+flick: start ---移动10px--> pan start ---move---> pan -- end且速度快 --> flick
