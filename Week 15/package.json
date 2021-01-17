@@ -1,0 +1,23 @@
+{
+  "name": "carousel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.12.2",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^3.11.1",
+    "@babel/plugin-transform-react-jsx": "7.10.4",
+    "@babel/preset-env": "7.11.0",
+    "@babel/core": "7.11.1",
+    "babel-loader": "^8.2.2"
+  }
+}
