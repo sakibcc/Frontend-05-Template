@@ -6,6 +6,3 @@ let d = [
   "https://static001.geekbang.org/resource/image/b6/4f/b6d65b2f12646a9fd6b8cb2b020d754f.jpg",
   "https://static001.geekbang.org/resource/image/73/e4/730ea9c393def7975deceb48b3eb6fe4.jpg",
 ];
-
-let a = <Carousel src={d} />;
-a.mountTo(document.body);

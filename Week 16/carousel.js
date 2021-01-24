@@ -11,6 +11,7 @@ export class Carousel extends Component {
     this.root = document.createElement("div");
     this.root.classList.add("carousel");
     for (const record of this[ATTRIBUTE].src) {
+      debugger;
       let child = document.createElement("div");
       child.style.backgroundImage = `url('${record.img}')`;
       this.root.appendChild(child);
