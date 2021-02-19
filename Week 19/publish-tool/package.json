@@ -2,5 +2,8 @@
   "name": "publish-tool",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^5.2.0"
+  }
 }
